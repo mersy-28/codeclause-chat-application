@@ -1,0 +1,123 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.home-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.logo h1 {
+  margin-bottom: 0.2rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  animation: pulsate 2s infinite alternate;
+}
+
+.logo h1 span {
+  color: #b100ff;
+  text-shadow: 0 0 15px rgba(177, 0, 255, 0.8);
+}
+
+.logo .tagline {
+  color: #80f1ff;
+  letter-spacing: 1.5px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+@keyframes pulsate {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                0 0 20px rgba(0, 255, 255, 0);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                0 0 20px rgba(0, 255, 255, 0.4),
+                0 0 30px rgba(0, 255, 255, 0.1);
+  }
+}
+
+.join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #00f5ff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.85rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #00f5ff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.join-button {
+  background: linear-gradient(45deg, #00f5ff, #b100ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+.join-button:hover {
+  background: linear-gradient(45deg, #b100ff, #00f5ff);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(177, 0, 255, 0.6);
+}

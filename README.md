@@ -128,6 +128,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 ## Deployment Guide
 
 This application consists of two parts that need to be deployed separately:
+
 1. The React frontend (this repository)
 2. The Socket.io server (in the `server` directory)
 

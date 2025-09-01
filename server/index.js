@@ -6,12 +6,18 @@ const { Server } = require('socket.io');
 const app = express();
 app.use(cors());
 
+// Add a simple health check endpoint
+app.get('/', (req, res) => {
+  res.send('NeoChat Socket.io server is running');
+});
+
 const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://codeclause-chat-application.vercel.app", "https://neochat-app.vercel.app"],
     methods: ["GET", "POST"],
+    credentials: true
   },
 });
 
@@ -83,4 +89,5 @@ io.on("connection", (socket) => {
 const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
   console.log(`SERVER RUNNING ON PORT ${PORT}`);
+  console.log(`Server date: ${new Date().toISOString()}`);
 });

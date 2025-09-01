@@ -24,7 +24,13 @@ function Chat() {
   useEffect(() => {
     if (!username || !room) return;
 
-    socket.current = io('http://localhost:3001');
+    const SOCKET_SERVER = process.env.REACT_APP_SOCKET_SERVER || 'http://localhost:3001';
+    console.log(`Connecting to socket server at: ${SOCKET_SERVER}`);
+    
+    socket.current = io(SOCKET_SERVER, {
+      withCredentials: true,
+      transports: ['websocket', 'polling']
+    });
     
     // Join the room
     socket.current.emit('join_room', { username, room });
